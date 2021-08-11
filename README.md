@@ -1,3 +1,3 @@
 ## Food Website UI
 
-### Made with React JS & Tailwinds
+### Made with React JS & Material UI
