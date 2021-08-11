@@ -1,4 +1,4 @@
-import { makeStyles, Button } from "@material-ui/core";
+import { makeStyles, Button, Container } from "@material-ui/core";
 import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
 import React from "react";
 import Grid from "@material-ui/core/Grid";
@@ -37,7 +37,10 @@ const useStyles = makeStyles({
 function NavBar() {
   const css = useStyles();
   return (
-    <div >
+    <Container maxWidth="xl">
+      
+   
+    
    <Grid container spacing={3} className={css.ctn}>
         <Grid item xs={12} lg={4} md={4} className={css.logo}>
           <img
@@ -73,7 +76,7 @@ function NavBar() {
           </Button>
         </Grid>
       </Grid>
-    </div>
+      </Container>
   );
 }
 

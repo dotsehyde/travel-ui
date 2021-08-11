@@ -1,16 +1,22 @@
-import { makeStyles, Typography, Button, Grid } from "@material-ui/core";
+import {
+  makeStyles,
+  Typography,
+  Button,
+  Grid,
+  Container,
+} from "@material-ui/core";
 import React from "react";
-
-const useStyles = makeStyles((theme)=>({
-
+import Colors from "../core/colors";
+const colors = new Colors();
+const useStyles = makeStyles((theme) => ({
   deco: {
     position: "absolute",
     top: "44%",
     left: "30%",
     zIndex: -1,
-    [theme.breakpoints.down('md')]: {
-      display:'none',
-  },
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
   bgBanner: {
     position: "absolute",
@@ -21,43 +27,44 @@ const useStyles = makeStyles((theme)=>({
   },
   right: {
     marginTop: "20px",
-    marginLeft: '-10px',
-    textAlign:'center'
+    marginLeft: "-10px",
+    textAlign: "center",
   },
   left: {
     marginTop: "100px",
     marginLeft: "100px",
-    textAlign: 'center',
-    [theme.breakpoints.down('md')]: {
+    textAlign: "center",
+    [theme.breakpoints.down("md")]: {
       marginLeft: "0px",
-      marginTop:'50px',
-  },
+      marginTop: "50px",
+    },
   },
   img: {
     height: "40vw",
-    [theme.breakpoints.down('md')]: {
-     height:'50vw',
-  },
+    [theme.breakpoints.down("md")]: {
+      height: "50vw",
+    },
   },
   tagLine: {
-    color: "#DF6951",
+    // color: "#DF6951",
+    color: colors.primaryColor,
     fontSize: "20px",
     fontFamily: "Poppins",
     fontWeight: "700",
     textAlign: "left",
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       textAlign: "center",
-  },
+    },
   },
   heading: {
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '30px',
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "30px",
       lineHeight: "39px",
     },
-    [theme.breakpoints.down('md')]: {
-      textAlign:'center', 
-  },
-    textAlign:'left', 
+    [theme.breakpoints.down("md")]: {
+      textAlign: "center",
+    },
+    textAlign: "left",
     fontFamily: "Poppins",
     fontWeight: "bold",
     fontSize: "84px",
@@ -74,9 +81,9 @@ const useStyles = makeStyles((theme)=>({
   cta: {
     marginTop: "30px",
     textAlign: "center",
-    [theme.breakpoints.up('lg')]: {
-      textAlign:"left"
-    }
+    [theme.breakpoints.up("lg")]: {
+      textAlign: "left",
+    },
   },
   ctaMore: {
     "&:hover": {
@@ -105,53 +112,55 @@ const useStyles = makeStyles((theme)=>({
 function Hero() {
   const css = useStyles();
   return (
-    <div >
+    <Container maxWidth="xl">
       <Grid container spacing={3}>
         <Grid item xs={12} md={6} lg={6} className={css.left}>
-          
-        <Typography variant="h5" className={css.tagLine}>
-          Best Destinations around the world
+          <Typography variant="h5" className={css.tagLine}>
+            Best Destinations around the world
           </Typography>
           <Typography variant="h1" className={css.heading}>
-          Travel, enjoy and live a new and full life
-        </Typography>
-        <Typography variant="p" className={css.desc}>
-          Built Wicket longer admire do barton vanity itself do in it. Preferred
-          to sportsmen it engrossed listening. Park gate sell they west hard for
-          the.
+            Travel, enjoy and live a new and full life
+          </Typography>
+          <Typography variant="p" className={css.desc}>
+            Built Wicket longer admire do barton vanity itself do in it.
+            Preferred to sportsmen it engrossed listening. Park gate sell they
+            west hard for the.
           </Typography>
           <div className={css.cta}>
-            
-          <Button variant="contained" disableElevation className={css.ctaMore}>
-            Find out more
-          </Button>
-          <Button
-            variant="text"
-            disableRipple
-            focusRipple={false}
-            startIcon={
-              <img
-                className={css.playBtn}
-                src={process.env.PUBLIC_URL + "assets/Playbtn.png"}
-                alt="playBtn"
-              />
-            }
-            className={css.ctaPlay}
-          >
-            Play demo
-          </Button>
-        </div>
+            <Button
+              variant="contained"
+              disableElevation
+              className={css.ctaMore}
+            >
+              Find out more
+            </Button>
+            <Button
+              variant="text"
+              disableRipple
+              focusRipple={false}
+              startIcon={
+                <img
+                  className={css.playBtn}
+                  src={process.env.PUBLIC_URL + "assets/Playbtn.png"}
+                  alt="playBtn"
+                />
+              }
+              className={css.ctaPlay}
+            >
+              Play demo
+            </Button>
+          </div>
         </Grid>
 
         <Grid item xs={12} md={4} lg={4} className={css.right}>
-        <img
-          className={css.img}
-          src={process.env.PUBLIC_URL + "assets/heroImage.png"}
-          alt=""
-        />
-       </Grid>
+          <img
+            className={css.img}
+            src={process.env.PUBLIC_URL + "assets/heroImage.png"}
+            alt=""
+          />
+        </Grid>
       </Grid>
-   
+
       <img
         className={css.bgBanner}
         src={process.env.PUBLIC_URL + "assets/bannerBG.png"}
@@ -162,8 +171,7 @@ function Hero() {
         src={process.env.PUBLIC_URL + "assets/deco.png"}
         alt="deco"
       />
-      
-    </div>
+    </Container>
   );
 }
 
