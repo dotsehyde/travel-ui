@@ -1,4 +1,4 @@
-import { makeStyles, Button, Container } from "@material-ui/core";
+import { makeStyles, Button } from "@material-ui/core";
 import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
 import React from "react";
 import Grid from "@material-ui/core/Grid";
@@ -32,12 +32,21 @@ const useStyles = makeStyles({
     marginRight: '10px',
     marginLeft:'10px',
   },
+  dropDown: {
+    backgroundColor: "transparent",
+    border: "none",
+    fontFamily:"Poppins",
+    fontSize: "16px",
+    "&:focus": {
+      border: "none",
+    }
+  }
 
 });
 function NavBar() {
   const css = useStyles();
   return (
-    <Container maxWidth="xl">
+    <div>
       
    
     
@@ -71,12 +80,15 @@ function NavBar() {
             Signup
           </Button>
 
-          <Button variant="text" endIcon={<KeyboardArrowDownOutlinedIcon />}>
-            EN
-          </Button>
+          <select className={css.dropDown} name="lang" id="lang">
+            <option value="english">EN</option>
+            <option value="french">FR</option>
+            <option value="spanish">SP</option>
+
+          </select>
         </Grid>
       </Grid>
-      </Container>
+      </div>
   );
 }
 

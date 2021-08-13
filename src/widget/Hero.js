@@ -2,29 +2,13 @@ import {
   makeStyles,
   Typography,
   Button,
-  Grid,
   Container,
+  Grid,
 } from "@material-ui/core";
 import React from "react";
 import Colors from "../core/colors";
 const colors = new Colors();
 const useStyles = makeStyles((theme) => ({
-  deco: {
-    position: "absolute",
-    top: "44%",
-    left: "30%",
-    zIndex: -1,
-    [theme.breakpoints.down("md")]: {
-      display: "none",
-    },
-  },
-  bgBanner: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    zIndex: -1,
-    width: "100vw",
-  },
   right: {
     marginTop: "20px",
     marginLeft: "-10px",
@@ -32,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   left: {
     marginTop: "100px",
-    marginLeft: "100px",
+    marginLeft: "80px",
     textAlign: "center",
     [theme.breakpoints.down("md")]: {
       marginLeft: "0px",
@@ -75,13 +59,18 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins",
     fontWeight: "500",
     fontSize: "16px",
+    textAlign: "left",
+    [theme.breakpoints.down("md")]: {
+      textAlign: "center",
+    },
     lineHeight: "30px",
     color: "#5E6282",
   },
+
   cta: {
-    marginTop: "30px",
+    marginTop: "25px",
     textAlign: "center",
-    [theme.breakpoints.up("lg")]: {
+    [theme.breakpoints.up("md")]: {
       textAlign: "left",
     },
   },
@@ -93,6 +82,8 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0px 20px 35px rgba(241, 165, 1, 0.15)",
     fontStyle: "normal",
     color: "white",
+    textTransform: "capitalize",
+    
     borderRadius: "10px",
     padding: "19px 27px",
   },
@@ -112,20 +103,24 @@ const useStyles = makeStyles((theme) => ({
 function Hero() {
   const css = useStyles();
   return (
-    <Container maxWidth="xl">
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={6} lg={6} className={css.left}>
+    <div>
+      <Container >
+
+      <Grid container spacing={1}>
+        <Grid item xs={12} md={6} className={css.left}>
           <Typography variant="h5" className={css.tagLine}>
             Best Destinations around the world
           </Typography>
           <Typography variant="h1" className={css.heading}>
             Travel, enjoy and live a new and full life
-          </Typography>
+            </Typography>
+            <Container >
           <Typography variant="p" className={css.desc}>
             Built Wicket longer admire do barton vanity itself do in it.
             Preferred to sportsmen it engrossed listening. Park gate sell they
             west hard for the.
           </Typography>
+            </Container>
           <div className={css.cta}>
             <Button
               variant="contained"
@@ -160,18 +155,8 @@ function Hero() {
           />
         </Grid>
       </Grid>
-
-      <img
-        className={css.bgBanner}
-        src={process.env.PUBLIC_URL + "assets/bannerBG.png"}
-        alt="banner"
-      />
-      <img
-        className={css.deco}
-        src={process.env.PUBLIC_URL + "assets/deco.png"}
-        alt="deco"
-      />
-    </Container>
+      </Container>
+    </div>
   );
 }
 
