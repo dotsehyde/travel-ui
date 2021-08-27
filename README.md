@@ -1,3 +1,3 @@
-## Food Website UI
+## Travel Website UI
 
-### Made with React JS & Material UI
+### Made with React JS & Bootstrap 4
